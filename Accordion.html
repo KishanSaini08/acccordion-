@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>accordion</title>
+    <link rel="stylesheet" href="Accordion.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="accordion">
+            <div class="accord">
+                <h2>Accordion 1<i class="fa-solid fa-square-minus"></i></h2>
+                <p class="active">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis totam, incidunt laudantium esse perspiciatis dolor provident laboriosam, quibusdam tempore vero voluptatibus deserunt! Odio et itaque aut obcaecati placeat, soluta exercitationem.</p>
+            </div>
+            <div class="accord">
+                <h2>Accordion 2<i class="fa-solid fa-square-plus"></i></h2>
+                <p>Quam eligendi modi veniam quae officiis neque explicabo dolor? Aperiam architecto nemo harum sequi labore iusto officiis excepturi corrupti quas hic maiores dolores sed a officia laboriosam, optio, dicta pariatur.</p>
+            </div>
+            <div class="accord">
+                <h2>Accordion 3<i class="fa-solid fa-square-plus"></i></h2>
+                <p>Optio, impedit. Dicta veritatis necessitatibus molestias deleniti nemo, maxime reiciendis cupiditate consectetur nesciunt voluptatem exercitationem atque quo dolor perspiciatis facere iure error minus tenetur unde. Ab ea molestiae dolore earum?</p>
+            </div>
+            <div class="accord">
+                <h2>Accordion 4<i class="fa-solid fa-square-plus"></i></h2>
+                <p>Facere adipisci accusamus amet temporibus aut! Perspiciatis beatae ea, velit eaque animi est, explicabo a perferendis id illo assumenda asperiores eveniet exercitationem quaerat neque! Saepe est modi nostrum nulla laboriosam.</p>
+            </div>
+            <div class="accord">
+                <h2>Accordion 5<i class="fa-solid fa-square-plus"></i></h2>
+                <p>Quos impedit nobis dicta dolorum nesciunt praesentium tenetur. Quibusdam animi impedit odit delectus corporis quisquam saepe ipsum nisi ducimus! Veritatis et itaque, saepe voluptas aliquam iste ea corrupti soluta vel.</p>
+            </div> 
+        </div>
+    </div>
+    <script>
+    //     const icons= document.querySelectorAll(" .accord i")
+    //     const para= document.querySelectorAll(".accord p")
+          
+    //     for( let i=0;i<icons.length;i++){
+    //         icons[i].onclick = function(){
+    //                                                     check if the neigbor para  has class active
+    //                                                     if it is does , remove it, otherwise add is
+
+    //             if(para[i].classList.contains("active")){
+    //                para[i].classList.remove("active") 
+
+    //                                                         change in minus
+    //                icons[i].classList.remove("fa-square-minus")
+    //                icons[i].classList.add("fa-square-plus")
+    //             }
+    //             else{
+    //                                                             first close any para open 
+    //                                                             i.e ask all paragraphs which  has an active plus
+
+
+    //                  for ( let j=0;j<para.length;j++){
+    //                     if(para[j].classList.contains("active")){
+    //                         para[j].classList.remove("active");
+
+    //                                                                  change in plus
+    //                         icons[j].classList.remove("fa-square-minus")
+    //                         icons[j].classList.add("fa-square-plus")
+    //                     }
+    //                  }
+    //                 para[i].classList.add("active")
+
+    //                 icons[i].classList.add("fa-square-minus")
+    //                 icons[i].classList.remove("fa-square-plus")
+    //             }
+    //     }
+      
+    // }
+     // DOM MANIPULATION : tarvaring
+                // parentElement , previousElementSibling, nextelementSibling, firstChild, lastChild
+                //children
+
+            const icons = document.querySelectorAll(".accord i");
+            const para = document.querySelectorAll(".accord p");
+
+            for (let i = 0; i < icons.length; i++) {
+            icons[i].onclick = function () {
+                if (
+                icons[i].parentElement.nextElementSibling.classList.contains("active")
+                ) {
+                icons[i].parentElement.nextElementSibling.classList.remove("active");
+                icons[i].classList.remove("fa-square-minus");
+                icons[i].classList.add("fa-square-plus");
+                } else {
+                for (let j = 0; j < para.length; j++) {
+                    if (para[j].classList.contains("active")) {
+                    para[j].classList.remove("active");
+
+                    para[j].previousElementSibling.children[0].classList.remove("fa-square-minus");
+                    para[j].previousElementSibling.children[0].classList.add("fa-square-plus");
+                    }
+                }
+
+                icons[i].parentElement.nextElementSibling.classList.add("active");
+                icons[i].classList.add("fa-square-minus");
+                icons[i].classList.remove("fa-square-plus");
+                }
+            };
+            }
+
+    </script>
+</body>
+</html>o

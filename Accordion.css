@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#accoardion{
+    width:70%;
+    margin: 4rem auto;
+}
+
+.accord{
+    margin-bottom: 1rem;
+}
+.accord h2{
+    border: 3px solid;
+    border-radius: 1rem;
+    padding:1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accord i{
+    cursor: pointer;
+}
+.accord p{
+    border: 3px solid;
+    border-top: none;
+    padding: 1rem;
+    border-bottom-left-radius:1rem ;
+    border-bottom-right-radius: 1rem;
+    display: none;
+}
+.accord p.active{
+    display: block;
+}
+
